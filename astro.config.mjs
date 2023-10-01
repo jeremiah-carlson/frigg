@@ -4,5 +4,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind()]
+  site: 'https://jeremiah-carlson.github.io',
+  base: '/frigg',
+  integrations: [tailwind()],
 });
