@@ -1,0 +1,42 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+interface Link {
+    content: string;
+    href: string;
+}
+
+interface Props {
+	name: string;
+    prepInstructions: Array<string>;
+    dishLinks: Array<Link>
+}
+
+const { name, prepInstructions, dishLinks } = Astro.props;
+---
+
+<Layout
+    title={name}
+>
+<main class="w-screen h-screen block">
+    <div class="w-2/3 m-auto [&>h2]:font-semibold [&>h2]:text-lg [&>ul]:list-disc [&>ol]:list-decimal">
+        <h1 class="w-full text-center text-slate-900 font-bold text-3xl">Basmati Rice</h1>
+        <hr class="bg-slate-900 h-1">
+        <br>
+        <h2>Prep Instructions:</h2>
+        <hr>
+        <ol>
+            {prepInstructions.map((instruction)=>(
+                <li>{instruction}</li>
+            ))}
+        </ol>
+        <br>
+        <h2>Dishes</h2>
+        <ul>
+            {dishLinks.map((lnk)=>(
+                <li><a href={lnk.href}>{lnk.content}</a></li>
+            ))}
+        </ul>
+    </div>
+</main>
+</Layout>

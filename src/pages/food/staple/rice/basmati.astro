@@ -1,28 +1,18 @@
 ---
-import Layout from '../../../../layouts/Layout.astro';
+import StaplePage from '../../../../components/food/StaplePage.astro';
 ---
-
-<Layout
-    title='Basmati Rice'
->
-<main class="w-screen h-screen block">
-    <div class="w-2/3 m-auto [&>h2]:font-semibold [&>h2]:text-lg [&>ul]:list-disc">
-        <h1 class="w-full text-center text-slate-900 font-bold text-3xl">Basmati Rice</h1>
-        <hr class="bg-slate-900 h-1">
-        <br>
-        <h2>Prep Instructions:</h2>
-        <hr>
-        <ol class="list-decimal">
-            <li>Measure 1.5 cups of water for every 1 cup of rice.</li>
-            <li>Bring rice and water to a simmer.</li>
-            <li>Cover, reduce heat to med-low, and cook for 12 minutes.</li>
-            <li>Rest unheated for 10 minutes.</li>
-        </ol>
-        <br>
-        <h2>Dishes</h2>
-        <ul class="list-decimal">
-            <li><a href="./basmati">Test</a></li>
-        </ul>
-    </div>
-</main>
-</Layout>
+<StaplePage 
+    name={"Basmati Rice"}
+    prepInstructions={[
+        "Measure 1.5 cups of water for every 1 cup of rice.",
+        "Bring rice and water to a simmer.",
+        "Cover, reduce heat to med-low, and cook for 12 minutes.",
+        "Rest unheated for 10 minutes.",
+    ]}
+    dishLinks={[
+        {
+            content: "None",
+            href: "./basmati",
+        },
+    ]}
+></StaplePage>
