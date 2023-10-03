@@ -1,5 +1,8 @@
 name: Deploy GitHub Pages
-on: workflow_dispatch
+on:
+  commit:
+    branches:
+      - main
 
 jobs:
   # Build job
